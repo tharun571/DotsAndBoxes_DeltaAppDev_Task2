@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Score"
+    android:background="@drawable/bg">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            >
+
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/result"
+        android:textSize="35sp"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:fontFamily="sans-serif-thin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+
+            <TextView
+                android:layout_marginTop="200dp"
+                android:id="@+id/play"
+                android:text="PLAY AGAIN"
+                android:padding="15dp"
+                android:background="@drawable/transpbg"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                android:fontFamily="sans-serif-thin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

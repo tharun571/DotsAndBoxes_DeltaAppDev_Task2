@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DotsAndBoxes_DeltaT2</string>
+
+    <string-array name="no">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+
+    </string-array>
+
+    <string-array name="g">
+        <item>3*3</item>
+        <item>4*4</item>
+        <item>5*5</item>
+
+    </string-array>
+
+
+</resources>
