@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameplayS"
+    android:orientation="vertical"
+    android:background="@drawable/bg">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/sc11"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40sp"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/bg1"
+                    android:fontFamily="sans-serif-thin"></TextView>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/sc21"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40sp"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/bg2"
+                    android:fontFamily="sans-serif-thin"></TextView>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="328dp"
+                android:layout_height="328dp"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="100dp"
+
+                android:background="#708090">
+
+                <com.example.dotsandboxes_deltat2.Singlegame
+                    android:id="@+id/g1"
+                    android:layout_width="298dp"
+                    android:layout_height="298dp"
+                    android:layout_margin="15dp"
+                    android:layout_gravity="center"></com.example.dotsandboxes_deltat2.Singlegame>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/u1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/undo"
+                android:background="@drawable/transpbg"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp">
+
+
+            </ImageButton>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

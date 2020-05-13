@@ -28,7 +28,7 @@ public class Gameplay extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Intent intent = getIntent();                                                            //
+        Intent intent = getIntent();
          p = intent.getIntExtra(Multi.EXTRA_P, 0);
          q = intent.getIntExtra(Multi.EXTRA_Q, 0);
 

@@ -11,10 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Score"
-            android:noHistory="true"></activity>
-        <activity android:name=".Gameplay"
-            android:noHistory="true"/>
+        <activity android:name=".Scoresingle"></activity>
+        <activity android:name=".GameplayS" />
+        <activity
+            android:name=".Score"
+            android:noHistory="true" />
+        <activity
+            android:name=".Gameplay"
+            android:noHistory="true" />
         <activity android:name=".Multi" />
         <activity android:name=".Single" />
         <activity android:name=".Dashboard" />

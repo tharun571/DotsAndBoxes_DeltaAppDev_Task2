@@ -13,8 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Animation anim,top;
-    TextView d,b;
+    Animation anim,top,scale;
+    TextView d,b,and;
 
     private static int SPLASH=5000;
 
@@ -26,12 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
         top= AnimationUtils.loadAnimation(this,R.anim.top);
         anim= AnimationUtils.loadAnimation(this,R.anim.anim);
+        scale= AnimationUtils.loadAnimation(this,R.anim.scale);
         d=findViewById(R.id.d);
         b=findViewById(R.id.b);
+        and=findViewById(R.id.and);
 
 
         d.setAnimation(top);
         b.setAnimation(anim);
+        and.setAnimation(scale);
 
 
 

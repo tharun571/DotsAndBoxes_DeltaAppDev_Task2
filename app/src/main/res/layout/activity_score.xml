@@ -23,7 +23,8 @@
     <TextView
         android:layout_margin="10dp"
         android:id="@+id/result"
-        android:textSize="35sp"
+        android:textSize="30sp"
+        android:layout_marginHorizontal="10dp"
         android:layout_gravity="center"
         android:textColor="#ffffff"
         android:fontFamily="sans-serif-thin"
@@ -31,12 +32,12 @@
         android:layout_height="wrap_content"></TextView>
 
             <TextView
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="150dp"
                 android:id="@+id/play"
                 android:text="PLAY AGAIN"
                 android:padding="15dp"
                 android:background="@drawable/transpbg"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
                 android:fontFamily="sans-serif-thin"

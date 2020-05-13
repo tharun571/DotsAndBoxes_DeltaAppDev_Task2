@@ -28,7 +28,7 @@
         android:fontFamily="sans-serif-thin"
         android:text="DOTS"
         android:textColor="#DCDCDC"
-        android:textSize="120sp"
+        android:textSize="100sp"
         android:layout_gravity="center"
     />
 
@@ -39,13 +39,13 @@
 
 
 <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/and"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-thin"
             android:text="and"
             android:textColor="#DCDCDC"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:layout_gravity="center"/>
 
 
@@ -57,7 +57,7 @@
             android:fontFamily="sans-serif-thin"
             android:text="BOXES"
             android:textColor="#DCDCDC"
-            android:textSize="120sp"
+            android:textSize="100sp"
             android:layout_gravity="center"/>
         </LinearLayout>
     </RelativeLayout>
