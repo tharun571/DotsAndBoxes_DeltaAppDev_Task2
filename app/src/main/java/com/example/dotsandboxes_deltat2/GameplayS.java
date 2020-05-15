@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 public class GameplayS extends AppCompatActivity {
     View g1;
     Singlegame game;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent=getIntent();
@@ -24,5 +26,7 @@ public class GameplayS extends AppCompatActivity {
 
 
         new Games1(2,p);
+
+
     }
 }

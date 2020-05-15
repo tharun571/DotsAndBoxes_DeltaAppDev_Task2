@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Scoresingle"></activity>
-        <activity android:name=".GameplayS" />
+        <activity android:name=".GameplayS"
+            android:noHistory="true"/>
         <activity
             android:name=".Score"
             android:noHistory="true" />

@@ -67,18 +67,10 @@
                     android:layout_gravity="center"></com.example.dotsandboxes_deltat2.Singlegame>
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/u1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/undo"
-                android:background="@drawable/transpbg"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp">
 
 
-            </ImageButton>
+
+
         </LinearLayout>
     </RelativeLayout>
 

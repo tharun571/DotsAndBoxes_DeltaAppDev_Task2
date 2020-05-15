@@ -305,40 +305,7 @@ public class Singlegame extends View {
         invalidate();
     }
 
-    private void generate(){
-        Log.w(TAG,"OIU ");
 
-        int a=0,b=0;
-        final int rr= new Random().nextInt(2);
-
-        if(rr == 0){
-
-            final int r = new Random().nextInt(u*(u-1))+1;
-            a=r;
-
-            while(valuex.contains(a)==true){
-                final int rrr = new Random().nextInt(u*(u-1))+1;
-                a=rrr;
-
-            }
-        }
-        if(rr == 1){
-            final int r = new Random().nextInt(u*(u-1))+1;
-            b=r;
-
-            while(valuey.contains(b)==true){
-                final int rrr = new Random().nextInt(u*(u-1))+1;
-                b=rrr;
-            }
-        }
-        Log.w(TAG,"OIU "+a+" "+b);
-
-        turns(a,b);
-
-
-
-
-    }
 
     private void score(){
 
@@ -591,7 +558,7 @@ public class Singlegame extends View {
             square[0][0]++;
         }
         if(m1==6|m2==7|m1==5|m2==4){
-
+            square[0][1]++;
         }
         if(m1==9|m1==10|m2==7|m2==10){
             square[0][2]++;
@@ -736,185 +703,12 @@ public class Singlegame extends View {
 
     }
 
-    public void undo(){
-        if(y1!=0) {
-            y1--;
-            int t2 = Example1.b;
-
-            sc1 = s1;
-            sc2 = s2;
-
-            score();
-
-
-            if (uu == 0) {
-                valuey.remove(ul1y - 1);
-                if(start==0){
-                    occy[0].remove(occy[0].size()-1);
-                }
-                if(start==1){
-                    occy[1].remove(occy[1].size()-1);
-                }
-
-
-                ul1y--;
-                start++;
-            } else {
-                valuex.remove(ul1x - 1);
-                if(start==0){
-                    occx[0].remove(occx[0].size()-1);
-                }
-                if(start==1){
-                    occx[1].remove(occx[1].size()-1);
-                }
-
-                ul1x--;
-                start++;
-            }
-
-            if (ub1 == 1) {
-                box.remove(ubb - 1);
-                if(st==0){
-                    mn[0].remove(mn[0].size()-1);
-                }
-                if(st==1){
-                    mn[1].remove(mn[1].size()-1);
-                }
-
-
-                ubb--;
-                start = st;
-                r--;
-
-            }
-
-            if (t2 == 3) {
-                box3u(ulx, uly);
-            }
-            if (t2 == 4) {
-                box4u(ulx, uly);
-            }
-            if (t2 == 5) {
-                box5u(ulx, uly);
-            }
-        }
-
-    }
-    private void box3u(int m1,int m2){
-
-
-
-        if(m1==1|m1==2|m2==1|m2==3){
-            square[0][0]--;
-        }
-
-        if(m1==4|m1==5|m2==5|m2==3){
-            square[0][1]--;
-
-        }
-
-        if(m1==3|m1==2|m2==4|m2==2){
-            square[1][0]--;
-        }
-
-        if(m1==5|m1==6|m2==4|m2==6){
-            square[1][1]--;
-        }
-        postInvalidate();
-    }
-
-    private void box4u(int m1,int m2){
-
-
-        if(m1==1|m2==1|m1==2|m2==4){
-            square[0][0]--;
-        }
-        if(m1==6|m2==7|m1==5|m2==4){
-            square[0][1]--;
-        }
-        if(m1==9|m1==16|m2==9|m2==10){
-            square[0][2]--;
-        }
-        if(m1==2|m1==3|m2==5|m2==2){
-            square[1][0]--;
-        }
-        if(m1==6|m1==7|m2==5|m2==8){
-            square[1][1]--;
-        }
-        if(m1==8|m1==11|m2==10|m2==11){
-            square[1][2]--;
-        }
-        if(m1==4|m1==3|m2==3|m2==6){
-            square[2][0]--;
-        }
-        if (m1==8|m1==7|m2==6|m2==9){
-            square[2][1]--;
-        }
-        if(m1==11|m1==12|m2==9|m2==12){
-            square[2][2]--;
-        }
-        postInvalidate();
-    }
-
-    private void box5u(int m1,int m2) {
-
-        if (m2 == 1 | m2 == 5 | m1 == 1 | m1 == 2) {
-            square[0][0]--;
-        }
-        if (m1 == 7 | m1 == 6 | m2 == 5 | m2 == 9) {
-            square[0][1]--;
-        }
-        if (m1 == 12 | m1 == 11 | m2 == 9 | m2 == 13) {
-            square[0][2]--;
-        }
-        if (m1 == 16 | m1 == 17 | m2 == 13 | m2 == 17) {
-            square[0][3]--;
-        }
-        if (m1 == 2 | m1 == 3 | m2 == 2 | m2 == 6) {
-            square[1][0]--;
-        }
-        if (m1 == 8 | m1 == 7 | m2 == 6 | m2 == 10) {
-            square[1][1]--;
-        }
-        if (m1 == 13 | m1 == 12 | m2 == 14 | m2 == 10) {
-            square[1][2]--;
-        }
-        if (m1 == 14 | m1 == 18 | m2 == 17 | m2 == 18) {
-            square[1][3]--;
-        }
-        if (m1 == 4 | m1 == 3 | m2 == 3 | m2 == 7) {
-            square[2][0]--;
-        }
-        if (m1 == 8 | m1 == 9 | m2 == 7 | m2 == 11) {
-            square[2][1]--;
-        }
-        if (m1 == 14 | m1 == 13 | m2 == 15 | m2 == 11) {
-            square[2][2]--;
-        }
-        if (m1 == 18 | m1 == 19 | m2 == 19 | m2 == 15) {
-            square[2][3]--;
-        }
-        if (m1 == 5 | m1 == 4 | m2 == 4 | m2 == 8) {
-            square[3][0]--;
-        }
-        if (m1 == 9 | m1 == 10 | m2 == 8 | m2 == 12) {
-            square[3][1]--;
-        }
-        if (m1 == 15 | m1 == 14 | m2 == 12 | m2 == 16) {
-            square[3][2]--;
-        }
-        if (m1 == 19 | m1 == 20 | m2 == 16 | m2 == 20) {
-            square[3][3]--;
-        }
-
-        postInvalidate();
-    }
 
     private void result(){
         Intent intent=new Intent(cn,Score.class);
 
         if(sc1>sc2){
-            intent.putExtra(EXTRA_P,"COMPUTER THE WINNER");
+            intent.putExtra(EXTRA_P,"COMPUTER IS THE WINNER");
         }
         if(sc1<sc2){
             intent.putExtra(EXTRA_P,"YOU ARE THE WINNER");
@@ -931,8 +725,510 @@ public class Singlegame extends View {
 
     }
 
+    private void generate(){
+        Log.w(TAG,"OIU ");
+
+        if (u==3){
+            generate1();
+        }
+        if (u==4){
+            generate2();
+        }
+        if (u==5){
+            generate3();
+        }
 
 
+
+
+    }
+
+    private  void generate1(){
+
+        int a=0,b=0;
+
+
+        final int rr= new Random().nextInt(2);
+
+        if(rr == 0){
+
+            final int r = new Random().nextInt(u*(u-1))+1;
+            a=r;
+
+            while(valuex.contains(a)==true){
+                final int rrr = new Random().nextInt(u*(u-1))+1;
+                a=rrr;
+
+            }
+        }
+        if(rr == 1){
+            final int r = new Random().nextInt(u*(u-1))+1;
+            b=r;
+
+            while(valuey.contains(b)==true){
+                final int rrr = new Random().nextInt(u*(u-1))+1;
+                b=rrr;
+            }
+        }
+        Log.w(TAG,"OIU "+a+" "+b);
+
+        turns(a,b);
+
+
+    }
+
+    private  void generate2(){
+
+        boolean b=true;
+        int x=0,y=0;
+        int i=3,j=0;
+        while(b==true&&i>0){
+
+            if(square[0][0]==i){
+
+                b=false;j++;
+                if(valuey.contains(1)==false){
+                    y=1;
+                }
+                 else if(valuey.contains(4)==false){
+                    y=4;
+                }
+                 else if(valuex.contains(1)==false){
+                    x=1;
+                }
+                 else if(valuex.contains(2)==false){
+                    x=2;
+                }
+
+            }
+            else if(square[0][1]==i){
+                b=false;                j++;
+
+                if(valuey.contains(4)==false){
+                    y=4;
+
+                }
+                else if(valuey.contains(7)==false){
+                    y=7;
+                }
+                else if(valuex.contains(5)==false){
+                    x=5;
+                }
+                else if(valuex.contains(6)==false){
+                    x=6;
+                }
+
+            }
+            else if(square[0][2]==i){
+                b=false;j++;
+                if(valuey.contains(7)==false){
+                    y=7;
+                }
+                else if(valuey.contains(10)==false){
+                    y=10;
+                }
+                else if(valuex.contains(9)==false){
+                    x=9;
+                }
+                else if(valuex.contains(10)==false){
+                    x=10;
+                }
+
+            }
+            else if(square[1][0]==i){
+                b=false;j++;
+                if(valuey.contains(2)==false){
+                    y=2;
+                }
+                else if(valuey.contains(5)==false){
+                    y=5;
+                }
+                else if(valuex.contains(2)==false){
+                    x=2;
+                }
+                else if(valuex.contains(3)==false){
+                    x=3;
+                }
+
+            }
+            else if(square[1][1]==i){
+                b=false;j++;
+                if(valuey.contains(5)==false){
+                    y=5;
+                }
+                else if(valuey.contains(8)==false){
+                    y=8;
+                }
+                else if(valuex.contains(6)==false){
+                    x=6;
+                }
+                else if(valuex.contains(7)==false){
+                    x=7;
+                }
+
+            }
+            else if(square[1][2]==i){
+                b=false;j++;
+                if(valuey.contains(8)==false){
+                    y=8;
+                }
+                else if(valuey.contains(11)==false){
+                    y=12;
+                }
+                else if(valuex.contains(10)==false){
+                    x=10;
+                }
+                else if(valuex.contains(11)==false){
+                    x=11;
+                }
+
+            }
+            else if(square[2][0]==i){
+                b=false;j++;
+                if(valuey.contains(3)==false){
+                    y=3;
+                }
+                else if(valuey.contains(6)==false){
+                    y=6;
+                }
+                else if(valuex.contains(3)==false){
+                    x=3;
+                }
+                else if(valuex.contains(4)==false){
+                    x=4;
+                }
+
+            }
+            else if(square[2][1]==i){
+                b=false;j++;
+                if(valuey.contains(6)==false){
+                    y=6;
+                }
+                else if(valuey.contains(9)==false){
+                        y=9;
+                }
+                else if(valuex.contains(7)==false){
+                    x=7;
+                }
+                if(valuex.contains(8)==false){
+                    x=8;
+                }
+
+            }
+            else if(square[2][2]==i){
+                b=false;j++;
+                if(valuey.contains(9)==false){
+                    y=9;
+                }
+                else if(valuey.contains(12)==false){
+                    y=12;
+                }
+                else if(valuex.contains(11)==false){
+                    x=11;
+                }
+                else if(valuex.contains(12)==false){
+                    x=12;
+                }
+
+            }
+
+            i=i-3;
+
+
+
+        }
+        if(j==0){
+
+            final int rr= new Random().nextInt(2);
+
+            if(rr == 0){
+
+                final int r = new Random().nextInt(u*(u-1))+1;
+                x=r;
+
+                while(valuex.contains(x)==true){
+                    final int rrr = new Random().nextInt(u*(u-1))+1;
+                    x=rrr;
+
+                }
+            }
+            if(rr == 1){
+                final int r = new Random().nextInt(u*(u-1))+1;
+                y=r;
+
+                while(valuey.contains(y)==true){
+                    final int rrr = new Random().nextInt(u*(u-1))+1;
+                    y=rrr;
+                }
+            }
+
+
+
+
+        }
+        turns(x,y);
+    }
+
+    private  void generate3() {
+
+        boolean b = true;
+        int x = 0, y = 0;
+        int i = 3, j = 0;
+
+        while (b == true && i > 0) {
+
+            if (square[0][1] == i) {
+                b = false;
+                j++;
+                if (valuex.contains(1) == false) {
+                    x = 1;
+                } else if (valuex.contains(5) == false) {
+                    x = 5;
+                } else if (valuey.contains(1) == false) {
+                    y = 1;
+                } else if (valuey.contains(2) == false) {
+                    y = 2;
+                }
+
+            }
+            else if (square[0][1] == i) {
+                b = false;
+                j++;
+                if (valuex.contains(5) == false) {
+                    x = 5;
+                } else if (valuex.contains(9) == false) {
+                    x = 9;
+                } else if (valuey.contains(6) == false) {
+                    y = 6;
+                } else if (valuey.contains(7) == false) {
+                    y = 7;
+                }
+
+            } else if (square[0][2] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(11) == false) {
+                    y = 11;
+                } else if (valuey.contains(12) == false) {
+                    y = 12;
+                } else if (valuex.contains(9) == false) {
+                    x = 9;
+                } else if (valuex.contains(13) == false) {
+                    x = 13;
+                }
+
+            } else if (square[0][3] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(16) == false) {
+                    y = 16;
+                } else if (valuey.contains(17) == false) {
+                    y = 17;
+                } else if (valuex.contains(13) == false) {
+                    x = 13;
+                } else if (valuex.contains(17) == false) {
+                    x = 17;
+                }
+
+            } else if (square[1][0] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(2) == false) {
+                    y = 2;
+                } else if (valuey.contains(3) == false) {
+                    y = 3;
+                } else if (valuex.contains(2) == false) {
+                    x = 2;
+                } else if (valuex.contains(6) == false) {
+                    x = 6;
+                }
+
+            } else if (square[1][1] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(7) == false) {
+                    y = 7;
+                } else if (valuey.contains(8) == false) {
+                    y = 8;
+                } else if (valuex.contains(6) == false) {
+                    x = 6;
+                } else if (valuex.contains(10) == false) {
+                    x = 10;
+                }
+
+            } else if (square[1][2] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(12) == false) {
+                    y = 12;
+                } else if (valuey.contains(13) == false) {
+                    y = 13;
+                } else if (valuex.contains(10) == false) {
+                    x = 10;
+                } else if (valuex.contains(14) == false) {
+                    x = 14;
+                }
+
+            } else if (square[1][3] == i) {
+                b = false;
+                j++;
+
+                if (valuey.contains(17) == false) {
+                    y = 17;
+                } else if (valuey.contains(18) == false) {
+                    y = 18;
+                } else if (valuex.contains(14) == false) {
+                    x = 14;
+                } else if (valuex.contains(18) == false) {
+                    x = 18;
+                }
+
+            } else if (square[2][0] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(3) == false) {
+                    y = 3;
+                } else if (valuey.contains(4) == false) {
+                    y = 4;
+                } else if (valuex.contains(3) == false) {
+                    x = 3;
+                } else if (valuex.contains(7) == false) {
+                    x = 7;
+                }
+
+            } else if (square[2][1] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(8) == false) {
+                    y = 8;
+                } else if (valuey.contains(9) == false) {
+                    y = 9;
+                } else if (valuex.contains(7) == false) {
+                    x = 7;
+                } else if (valuex.contains(11) == false) {
+                    x = 11;
+                }
+
+            } else if (square[2][2] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(13) == false) {
+                    y = 13;
+                } else if (valuey.contains(14) == false) {
+                    y = 14;
+                } else if (valuex.contains(11) == false) {
+                    x
+                            = 11;
+                } else if (valuex.contains(15) == false) {
+                    x = 15;
+                }
+
+            } else if (square[2][3] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(18) == false) {
+                    y = 18;
+                } else if (valuey.contains(19) == false) {
+                    y = 19;
+                } else if (valuex.contains(15) == false) {
+                    x = 15;
+                } else if (valuex.contains(19) == false) {
+                    x = 19;
+                }
+
+            } else if (square[3][0] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(4) == false) {
+                    y = 4;
+                } else if (valuey.contains(5) == false) {
+                    y = 5;
+                } else if (valuex.contains(4) == false) {
+                    x = 4;
+                } else if (valuex.contains(8) == false) {
+                    x = 8;
+                }
+
+            } else if (square[3][1] == i) {
+                b = false;
+                j++;
+                Log.w(TAG, "APE ");
+                if (valuey.contains(9) == false) {
+                    y = 9;
+                } else if (valuey.contains(10) == false) {
+                    y = 10;
+                } else if (valuex.contains(8) == false) {
+                    x = 8;
+                } else if (valuex.contains(12) == false) {
+                    x = 12;
+                }
+
+            } else if (square[3][2] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(14) == false) {
+                    y = 14;
+                } else if (valuey.contains(15) == false) {
+                    y = 15;
+                } else if (valuex.contains(12) == false) {
+                    x = 12;
+                } else if (valuex.contains(16) == false) {
+                    x = 16;
+                }
+
+            } else if (square[3][3] == i) {
+                b = false;
+                j++;
+                if (valuey.contains(20) == false) {
+                    y = 20;
+                } else if (valuey.contains(19) == false) {
+                    y = 19;
+                } else if (valuex.contains(20) == false) {
+                    x = 20;
+                } else if (valuex.contains(16) == false) {
+                    x = 16;
+                }
+
+            }
+
+            i = i - 3;
+
+
+        }
+        if (j == 0) {
+
+            final int rr = new Random().nextInt(2);
+
+            if (rr == 0) {
+
+                final int r = new Random().nextInt(u * (u - 1)) + 1;
+                x = r;
+
+                while (valuex.contains(x) == true) {
+                    final int rrr = new Random().nextInt(u * (u - 1)) + 1;
+                    x = rrr;
+
+                }
+            }
+            if (rr == 1) {
+                final int r = new Random().nextInt(u * (u - 1)) + 1;
+                y = r;
+
+                while (valuey.contains(y) == true) {
+                    final int rrr = new Random().nextInt(u * (u - 1)) + 1;
+                    y = rrr;
+                }
+            }
+        }
+            Log.w(TAG, "APE " + x + " " + y);
+
+            turns(y,x);
+
+
+
+
+
+    }
 
 
 
